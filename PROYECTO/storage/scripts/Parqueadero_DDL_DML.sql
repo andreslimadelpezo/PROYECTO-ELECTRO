@@ -40,7 +40,7 @@ CREATE TABLE SensorEvento (
 
 
 INSERT INTO Parqueadero (Nombre, CapacidadTotal) 
-VALUES ('Parqueadero EPN', 2);
+VALUES ('Parqueadero EPN', 14);
 
 
 

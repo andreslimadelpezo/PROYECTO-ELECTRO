@@ -15,8 +15,8 @@ import Infrastructure.AppMSG;
 import Infrastructure.AppStyle;
 
 public class HistorialPanel extends JPanel {
-    private PatLabel     lblTitulo   = new PatLabel("📋 VEHÍCULOS ACTIVOS");
-    private PatLabel     lblBuscar   = new PatLabel("🔍 Buscar Placa:");
+    private PatLabel     lblTitulo   = new PatLabel("VEHÍCULOS ACTIVOS");
+    private PatLabel     lblBuscar   = new PatLabel("Buscar Placa:");
     private PatTextBox   txtBuscar   = new PatTextBox();
     private PatButton    btnRefrescar= new PatButton(" Refrescar");
     private PatButton    btnSalida   = new PatButton(" Registrar Salida");
@@ -127,10 +127,9 @@ public class HistorialPanel extends JPanel {
 
             if (AppMSG.showConfirmYesNo("¿Confirmar salida del vehículo con placa: " + placa + "?")) {
                 RegistroMovimientoDAO dao = new RegistroMovimientoDAO();
-                // El método delete del DataHelper ya pone Estado = 'X' (o 'I')
                 if (dao.delete(id)) {
                     AppMSG.show("Salida registrada con éxito.");
-                    cargarDatos(); // Recargar tabla
+                    cargarDatos(); 
                 }
             }
         } catch (Exception e) {
